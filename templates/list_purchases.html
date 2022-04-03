@@ -1,0 +1,12 @@
+<html>
+  <head>
+      <h1>Here is the list of purchases from the database!</h1>
+  </head>
+  <body>
+    <ol>
+        {%for purchase in purchases%}
+        <li>{{purchase}}</li>
+        {%endfor%}
+    </ol>
+  </body>
+</html>

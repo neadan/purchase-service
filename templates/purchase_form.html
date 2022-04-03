@@ -1,0 +1,14 @@
+<html>
+  <body>
+
+  <h2>Please fill in this form to add a purchase to the database!</h2>
+
+    <form action="http://127.0.0.1:5000/api/v1/purchase_form" method="POST" enctype="multipart/form-data">
+        <label for="product_name">Product name:</label><br>
+        <input type="text" id="product_name" name="p_name"><br>
+        <label for="product_price">Product price:</label><br>
+        <input type="number" id="product_price" name="p_price"><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

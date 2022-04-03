@@ -1,0 +1,26 @@
+version: '3.8'
+
+volumes:
+  purchase-db-vol:
+
+services:
+  purchase-service:
+    build: .
+    environment:
+      POSTGRES_USER: myUser
+      POSTGRES_PASSWORD: myPassword
+      POSTGRES_DB: purchase_db
+    ports:
+      - "5000:5000"
+    depends_on:
+      - purchase-db
+  purchase-db:
+    image: postgres:14.2-alpine
+    environment:
+      POSTGRES_USER: myUser
+      POSTGRES_PASSWORD: myPassword
+      POSTGRES_DB: purchase_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - purchase-db-vol:/var/lib/postgresql/data
